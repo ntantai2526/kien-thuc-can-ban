@@ -92,19 +92,55 @@
 // console.log(`Tổng cần tính là: ${s}`);
 
 //Bài 20 tìm số hoàn thiện phạm vi từ 1-1000
-let result = []
-for(let num = 1; num <= 1000; num++){
-    sum = 0;
-    for(let i = 1; i <= num/2; i ++){
-        if(num % i === 0){
-            sum+=i
+//Kiểm tra 1 giá trị là số hoàn hảo
+// let n = 7;
+// let tong = 0;
+// for(let i = 1; i < 6; i++){
+//     if(n%i === 0){
+//         console.log(i);
+//         tong += i;
+//     }
+// }
+// console.log(`Tổng = ${tong}`); 
+// // kiểm tra n có phải lag số hoàn hảo
+// if(tong === n){
+//     console.log(`Đây là 1 số hoàn hảo`)
+// }else{
+//     console.log(`Đây không phải 1 số hoàn hảo`)
+// }
+//tìm giá trị hoàn hảo từ 1 - 1000
+//cách 1
+let result=[];
+for(let n = 1; n <= 1000; n++){
+    let tong = 0;
+    for(let i = 1; i < n; i++){
+        if(n % i ===0){
+            tong += i;
         }
     }
-    if(sum === num && num !== 0){
-        result.push(num);
+    if(tong === n){
+        result.push(n)
     }
 }
-console.log("Số hoàn hảo từ 1 - 1000 là: "+ result.join(", "))
+console.log("Số hoàn hảo từ 1 - 1000 là: "+ result.join(", "));
+
+
+// cách 2
+// let result = []
+// for(let num = 1; num <= 1000; num++){
+//     sum = 0;
+//     //Kiểm tra tổng số thực bằng bao nhiêu
+//     for(let i = 1; i <= num/2; i ++){
+//         if(num % i === 0){
+//             sum+=i
+//         }
+//     }
+//     //So sánh tổng số thực bằng n không
+//     if(sum === num ){
+//         result.push(num);
+//     }
+// }
+// console.log("Số hoàn hảo từ 1 - 1000 là: "+ result.join(", "))
 
 
 

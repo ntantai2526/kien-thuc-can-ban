@@ -38,33 +38,33 @@ function xinChao1(name){
 
 //gọi hàm
 // xinChao1(inputName)
-xinChao1(`Trần Như Nhộng`)
+// xinChao1(`Trần Như Nhộng`)
 // khi thân hàm của nó không có keyword return khi trả về sẽ là undefined
-console.log(xinChao1(`Trần Như Nhộng`))
+// console.log(xinChao1(`Trần Như Nhộng`))
 
-//Ví dụ 2
-function tinhTong(a, b){
-    // let ketQua = a+b
-    // return ketQua
-    return a + b
-}
-//goi hàm
-console.log(`tổng 2 số  a và b là: ${tinhTong(5,6)}`)
-//Gán biến cho hàm
-let diemToan = 9
-let diemVan = 9.5
-let tongDiem = tinhTong(diemToan, diemVan)
-console.log(`Tổng điểm là: ${tongDiem}`)
-console.log(`DTB = ${tongDiem/2}`)
-//5. tryền giá trị mặc định co parameters
-console.log(tinhTong(10))//NaN do thiếu đối số
+// //Ví dụ 2
+// function tinhTong(a, b){
+//     // let ketQua = a+b
+//     // return ketQua
+//     return a + b
+// }
+// //goi hàm
+// console.log(`tổng 2 số  a và b là: ${tinhTong(5,6)}`)
+// //Gán biến cho hàm
+// let diemToan = 9
+// let diemVan = 9.5
+// let tongDiem = tinhTong(diemToan, diemVan)
+// console.log(`Tổng điểm là: ${tongDiem}`)
+// console.log(`DTB = ${tongDiem/2}`)
+// //5. tryền giá trị mặc định co parameters
+// console.log(tinhTong(10))//NaN do thiếu đối số
 
-function tinhTong2(a = 0, b = 0){
-    // let ketQua = a+b
-    // return ketQua
-    return a + b
-}
-console.log(tinhTong2(10))
+// function tinhTong2(a = 0, b = 0){
+//     // let ketQua = a+b
+//     // return ketQua
+//     return a + b
+// }
+// console.log(tinhTong2(10))
 
 // Function Declaration & Function Expression
 
@@ -85,6 +85,40 @@ let tich = function(a,b){
 }
 //gọi hàm
 let kq2 = tich(4,6)
-console.log(kq2)
+// console.log(kq2)
+
+// Arrow function là một cú pháp viết ngắn của hàm trong JavaScript
+
+//funciton expresstion
+let multiply = function(a, b){
+    return a*b
+}
+//goi hàm
+console.log(multiply(5,4))
+
+// Arrow functiton (hàm mũi tên)
+let multiplyArrow = (a, b) => a*b
+//gọi hàm
+console.log(multiplyArrow(5,5))
+
+//tuy nhiên với trường hợp hàm phức  tạp, cần thêm khóip {}
+//function expresstion
+let multiplyAndAdd = function(a,b){
+    let product = a*b
+    let sum = a+b
+    return product + sum
+}
+
+let multiplyAndAddArrow = (a,b) =>{
+    let product = a*b
+    let sum = a+b
+    return product + sum
+}
+
+//goi hà,
+console.log(multiplyAndAdd(3,5))
+console.log(multiplyAndAddArrow(3,5))
+
+
 
 

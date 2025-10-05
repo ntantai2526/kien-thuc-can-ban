@@ -110,19 +110,19 @@
 // }
 //tìm giá trị hoàn hảo từ 1 - 1000
 //cách 1
-let result=[];
-for(let n = 1; n <= 1000; n++){
-    let tong = 0;
-    for(let i = 1; i < n; i++){
-        if(n % i ===0){
-            tong += i;
-        }
-    }
-    if(tong === n){
-        result.push(n)
-    }
-}
-console.log("Số hoàn hảo từ 1 - 1000 là: "+ result.join(", "));
+// let result=[];
+// for(let n = 1; n <= 1000; n++){
+//     let tong = 0;
+//     for(let i = 1; i < n; i++){
+//         if(n % i ===0){
+//             tong += i;
+//         }
+//     }
+//     if(tong === n){
+//         result.push(n)
+//     }
+// }
+// console.log("Số hoàn hảo từ 1 - 1000 là: "+ result.join(", "));
 
 
 // cách 2
@@ -141,6 +141,42 @@ console.log("Số hoàn hảo từ 1 - 1000 là: "+ result.join(", "));
 //     }
 // }
 // console.log("Số hoàn hảo từ 1 - 1000 là: "+ result.join(", "))
+
+//Kiểm tra số nguyên tố(chia hết cho 1 và chính nó)
+
+while (true) {
+    //B1: Nhập số nguyên a từ người dùng
+    let a = Number(prompt(`Nhập vào 1 số nguyên dương a: `))
+    //B2: Kiểm tra xem nó phải số nguyên dương không?
+    while (!Number.isInteger(a) || a<=0) {
+        a = Number(prompt(`Nhập lại a, a phải là số nguyên dương.`))
+    }
+    // alert(`Giá trị a hợp lệ a = ${a}`)
+    //B3: kiểm tra a là số nguyên tố không
+    let isPrime = true;
+    for(let i = 2;  i < a; i++){
+        if (a % i === 0) {
+            isPrime = false;
+            break;
+        }
+    }
+    //B4: Hiển thị kết quả
+    if(isPrime){
+        alert(`${a} là số nguyên tố`)
+    }else{
+        alert(`${a} không phải là số nguyên tố`)
+    }   
+    //B5: Hỏi người dùng có muốn dùng nữa không.
+    let answer = prompt(`
+        Bạn có muốn tiếp tục không?
+        Nhập "no" để thoát
+        bấm phím bất kỳ để tiếp tục`
+    );  
+    if (answer.toLowerCase() === "no"){
+        break;
+ }
+}
+
 
 
 

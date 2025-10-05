@@ -119,6 +119,62 @@ let multiplyAndAddArrow = (a,b) =>{
 console.log(multiplyAndAdd(3,5))
 console.log(multiplyAndAddArrow(3,5))
 
+//Functions Calling other functions
 
+//Hàm thục hiện phép cộng
+function cong(a,b){
+    return a+b
+}
+//Hàm thực hiện phép nhân
+function nhan(x,y){
+    return x*y
+}
+//Hàm gọi các hàm khác để thực hiện tổng và nhân
+function congNhan(num1, num2, num3){
+    //gọi hàm cộng để tính tổng num1+num2
+    let sum = cong(num1, num2)
+    //gọi hàm nhâm để nhân  sum với num3
+    let product = nhan(sum,num3)
+    //trả về kết quả
+    return product
+}
+//Sử dụng hàm  congNhan
+let result = congNhan(2,3,4)
+console.log(result)
 
+//Bài tập 
+//Viết chương trình nhâp vào n và tính n!
+//Sử dụng for loop
+// let n = Number(prompt(`Nhập và số nguyên n để tính n!: `))
+// let giaiThua = 1
+// for(let i = 1;  i <= n; i++){
+//     giaiThua *= i;
+// }
+// console.log(`Giai thừa của ${n} là ${giaiThua}`);
+//Sử dụng while loop
+// let giaiThuaWhile = function(){
+//     let n = Number(prompt(`Nhập và số nguyên n để tính n!: `))
+//     let  i = 1
+//     let giaiThua = 1
+//     while(i <= n){
+//         giaiThua *= i
+//         i++;
+//     }
+//     return `Giai thừa của ${n} là ${giaiThua}`
+// }
+// console.log(giaiThuaWhile())
 
+//function truyền giá trị bên ngoài
+let giaiThuaWhile1 = function(n){
+    let  i = 1
+    let giaiThua = 1
+    while(i <= n){
+        giaiThua *= i
+        i++;
+    }
+    return `Giai thừa của ${n} là ${giaiThua}`
+}
+let n = Number(prompt(`Nhập giá trị n: `))
+console.log(giaiThuaWhile1(n))
+
+// Giải phương trình bậc 2

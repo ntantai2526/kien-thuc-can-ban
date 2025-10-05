@@ -66,6 +66,25 @@ function tinhTong2(a = 0, b = 0){
 }
 console.log(tinhTong2(10))
 
+// Function Declaration & Function Expression
 
+//function declaration (tường minh)
+function tenFunction(parameters){
+    //thân hàm
+    //return something
+}
+
+//function expresstion
+let tenBien = function(parameters){
+    //thân hàm
+    //return something
+}
+//vd
+let tich = function(a,b){
+    return a*b;
+}
+//gọi hàm
+let kq2 = tich(4,6)
+console.log(kq2)
 
 

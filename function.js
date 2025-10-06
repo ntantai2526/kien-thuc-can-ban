@@ -165,16 +165,88 @@ console.log(result)
 // console.log(giaiThuaWhile())
 
 //function truyền giá trị bên ngoài
-let giaiThuaWhile1 = function(n){
-    let  i = 1
-    let giaiThua = 1
-    while(i <= n){
-        giaiThua *= i
-        i++;
-    }
-    return `Giai thừa của ${n} là ${giaiThua}`
-}
-let n = Number(prompt(`Nhập giá trị n: `))
-console.log(giaiThuaWhile1(n))
+// function giaiThuaFor(n){
+//     //Sử dụng while
+//     // let  i = 1
+//     // let giaiThua = 1
+//     // while(i <= n){
+//     //     giaiThua *= i
+//     //     i++;
+//     // }
+//     //Sử dụng for
+//     let giaiThua=1;
+//     for(let i = 1; i<=n;i++){
+//         giaiThua*=i;
+//     }
+//     // return `Giai thừa của ${n} là ${giaiThua}`
+//     return giaiThua;
+// }
+// let n = Number(prompt(`Nhập giá trị n: `))
+// while(!Number.isInteger(n) || n < 0){
+//     n = Number(prompt(`Nhập giá trị không hợp lệ, vui lòng nhập lại: `))
+// }
+// let ketQuaGTFor = giaiThuaFor(n);
+// console.log(`Giai thừa của ${n} là ${ketQuaGTFor}`)
 
 // Giải phương trình bậc 2
+
+function ptBacHai_1(a,b,c){
+    //Tính delta
+    let delta = b**2 - 4*a*c;
+    if(delta > 0){
+        let x1 = (-b +Math.sqrt(delta))/ (2*a)
+        let x2 = (-b -Math.sqrt(delta))/ (2*a)
+        console.log(`Phương trình có 2 nghiệm là x1 = ${x1} và x2 = ${x2}`)
+    }else if(delta===0){
+        let x1 = -b/2*a
+        console.log(`Phương trình có nghiệm kép là ${x1}`)
+    }else{
+        console.log(`Phương trình vô nghiệm`)
+    }
+}
+//Gọi hàm
+ptBacHai_1(1,2,-3)
+ptBacHai_1(1,2,1)
+ptBacHai_1(1,1,1)
+
+//Cách 2 express function
+let ptBacHai_2 = function(a,b,c){
+     //Tính delta
+    let delta = b**2 - 4*a*c;
+    if(delta > 0){
+        let x1 = (-b +Math.sqrt(delta))/ (2*a)
+        let x2 = (-b -Math.sqrt(delta))/ (2*a)
+        console.log(`Phương trình có 2 nghiệm là x1 = ${x1} và x2 = ${x2}`)
+    }else if(delta===0){
+        let x1 = -b/2*a
+        console.log(`Phương trình có nghiệm kép là ${x1}`)
+    }else{
+        console.log(`Phương trình vô nghiệm`)
+    }
+}
+//Gọi hàm
+ptBacHai_2(1,2,-3)
+ptBacHai_2(1,2,1)
+ptBacHai_2(1,1,1)
+
+//Cách 3 Arrow Function
+let ptBacHai_3 = (a,b,c) =>{
+    //Tính delta
+    let delta = b**2 - 4*a*c;
+    if(delta > 0){
+        let x1 = (-b +Math.sqrt(delta))/ (2*a)
+        let x2 = (-b -Math.sqrt(delta))/ (2*a)
+        console.log(`Phương trình có 2 nghiệm là x1 = ${x1} và x2 = ${x2}`)
+    }else if(delta===0){
+        let x1 = -b/2*a
+        console.log(`Phương trình có nghiệm kép là ${x1}`)
+    }else{
+        console.log(`Phương trình vô nghiệm`)
+    }
+}
+ptBacHai_3(1,2,-3)
+ptBacHai_3(1,2,1)
+ptBacHai_3(1,1,1)
+
+
+

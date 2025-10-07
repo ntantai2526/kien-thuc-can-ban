@@ -69,6 +69,40 @@ let diemVan
 // let diemVan // báo lỗi do đã có 1 biến trong cùng phạm vi rồi
 
 
+//27.2 Hoisting trong JavaScript Functions - Hướng dẫn chi tiết JavaScript
+//1. Function Declaration
+//có hosting. Bạn có thể gọi hàm trước khi định nghĩa nó.
+//2. Function Expression, Arrow Function
+//không có hosting. Phải khai báo trước khi gọi hàm
+
+//1. Function Declaration
+hoisttingFunction()
+function hoisttingFunction(){
+    console.log(`Hello`)
+}
+//Engine của trình duyệt đọc:
+function hoisttingFunction(){
+    console.log(`Hello`)
+}
+hoisttingFunction()
+
+//2. Function Expression, Arrow Function
+// function expression
+// nonHoistingFunction()//Cannot access 'nonHoistingFunction' before initialization
+let nonHoistingFunction = function(){
+    console.log(`Hello`)
+}
+nonHoistingFunction()
+//Arrow function
+// arrowFunction()//Cannot access 'nonHoistingFunction' before initialization
+let arrowFunction = () =>{
+    console.log(`Hello`)
+}
+arrowFunction()
+
+
+
+
 
 
 

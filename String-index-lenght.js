@@ -86,6 +86,66 @@ console.log(s11.substring(4,-1))// 0123 => substring(0, 4)
 console.log("Sử dụng slice với tham số âm")
 console.log(s11.slice(-3,-1))// 78 cắt từ vị trí 3- đến -2
 
+//29.3 Tối ưu hóa Chuỗi JavaScript - trim(), trimEnd(), và trimStart() trong JavaScript
+//.trim() xóa khoảng trắng ở hai đầu chuỗi
+//.trimStrat() xóa khoảng trắng ở đầu chuỗi
+//.trimEnd() xóa khoảng trắng ở cuối chuỗi
+
+//29.4 JavaScript String Methods concat(), toUpperCase(), toLowerCase(), charAt()
+//str1.concat(str2, str3, ..., strN) nối các chuỗi str2, str3... strN vào str1
+//toUpperCase() chuyển toàn bộ chuỗi sang in HOA
+//toLowerCase() chuyển toàn bộ chuỗi sang in thường
+//charAt(index) trả về chuỗi nằm ở vị trí index được truyền vào
+
+let s19 = "Hello"
+console.log(s19.charAt(2))//=> l
+
+//29.5 JavaScript String Methods replace (oldValue, newValue) repeat (count) in JS
+//string.replace(oldValue, newValue)
+let s12 = "học học nữa học mãi"
+console.log(s12.replace("học", "ngủ"))//ngủ học nữa học mãi
+console.log(s12.replace(/học/g, "ngủ"))//ngủ ngủ nữa ngủ mãi
+// ký tự / bắt đầu biểu diễn chính quy
+// học: là chuỗi cần tìm kiếm và thay thế
+// ký tự / cuối đánh dấu cho phần cuối tìm kiếm
+// g: Cờ global. khi sử dụng -> JS sẽ tìm kiếm toàn bộ chuỗi
+
+//repeat(count) lặp đi lặp lại cho đủ count
+let s13 = "Hello, "
+console.log(s13.repeat(3))
+
+//29.6 JavaScript String Methods indexOf , lastIndexOf, includes - Xử lý chuỗi trong JavaScript
+// string.indexOf(searchValue, fromIndex)
+let s14 = "abcdef abcdef"
+let s15 = s14.indexOf("d")
+console.log(s15)
+//Tìm chữ "c" bắt đầu từ vị trí 3
+console.log(s14.indexOf("c", 3))
+// string.lastIndexOf(searchValue, fromIndex) tìm kiếm giá trị trong khoản index
+// string.includes(searchValue, fromIndex) kiếm tra xem giá trị có tồn tại trong chuỗi không
+// trả về giá trị true/false
+console.log(s14.includes("a"))
+
+//29.7 String Methods JavaScript startsWith() endsWith trong JS, xử lý chuỗi trong JavaScript
+//startsWith(searchValue, [startIndex]) kiểm tra chuỗi có bắt đầu bằng searchValue không
+console.log(s14.startsWith("a"))//true
+console.log(s14.startsWith("b"))//false
+console.log(s14.startsWith("bc", 1))//true bắt  đầu từ vị trí 1
+//endWith(searchValue, [endIndex])kiểm tra chuỗi có kết thúc bằng searchValue không
+let s16 ="01234567890"
+console.log(s16.endsWith("9"))// false do nó end bằng 0
+console.log(s16.endsWith("9", 10))//true do kết thúc tại vị trí thứ 10 là 9
+console.log(s16.endsWith("9", 9))//false do kết thúc tại vị trí thứ 9 là 8
+console.log(s16.endsWith("78", 9))//true do kết thúc tại vị trí thứ 9 là 78
+
+//Ví  dụ kiểm tra xem tên tệp cho kết thúc bằng .mp3 hay không
+let tenTepTin = "nhac.mp3"
+if(tenTepTin.endsWith(".mp3")){
+    console.log(`Tệp tin này là file âm nhạc .mp3`)
+}else{
+    console.log(`Đây không phải là file âm nhạc .mp3`)
+}
+
 
 
 

@@ -146,8 +146,18 @@ if(tenTepTin.endsWith(".mp3")){
     console.log(`Đây không phải là file âm nhạc .mp3`)
 }
 
+//29.8 split() trong JavaScript Hướng dẫn JavaScript chi tiết cho người mới học - tuhoc.cc
+//split(separator, [limit]) dùng để tách chuỗi thành mảng
+let students = "Hoa, Lan, Trung, Huệ"
+let arrStudents = students.split(",")
+console.log(arrStudents)
+//giới hạn phần tử của mảng
+let arrStudents1 = students.split(",",  3)
+console.log(arrStudents1)
 
-
-
-
+//tách chuỗi rỗng "" thì sẽ tách từng ký tự -> mảng
+let str = "abcdefgh"
+console.log(str.split(""))
+let fullName = "Nguyễn Tấn Tài"
+console.log(fullName.split(""))
 

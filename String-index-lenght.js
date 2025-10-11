@@ -160,4 +160,15 @@ let str = "abcdefgh"
 console.log(str.split(""))
 let fullName = "Nguyễn Tấn Tài"
 console.log(fullName.split(""))
+ 
+
+
+
+
+
+
+
+
+
+
 

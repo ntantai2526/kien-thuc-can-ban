@@ -55,48 +55,70 @@ function kiemTraKyTu(){
 //cửa, sai quá 5 lần khóa đăng nhập, thoát chương trình
 // vd: mật khẩu hợp lệ Abc123
 
-function kiemTraPassword(){
-    while(true){
-        //Nhập vào giá trị
-        let password = prompt(`Nhập vào để tạo password: `)
-        //Kiểm tra điều kiện
-        chuThuong = 0
-        chuHoa = 0
-        chuSo = 0
-        khoangTrang = 0
-        kyTuDacBiet = 0
-        for(i = 0; i < password.length; i++){
-            char = password[i]
-            if (char >= "a" && char <= "z") {
-                chuThuong++;
-            } else if (char >= "A" && char <= "Z") {
-                chuHoa++;
-            } else if (char >= "0" && char <= "9") {
-                chuSo++;
-            } else if (char === " ") {
-                khoangTrang++;
-            } 
-            // Chữ có dấu tiếng Việt
-            else if (/[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ]/.test(char)) {
-                chuThuong++; // hoặc tạo riêng biến demKyTuCoDau nếu muốn đếm riêng
-            } 
-            // Ký tự đặc biệt
-            else {
-                kyTuDacBiet++;
-            }
+function isPasswordValid(password){
+    if(password.length < 6){
+        return false
+    }
+    let hasUpperCase = false
+    let hasLowerCase = false
+    let hasDigit = false
 
+    for(let i = 0; i <= password.length; i++){
+        let char = password[i]
+        if(char>="a"&&char<="z"){
+            hasLowerCase = true
+        }else if (char>="A"&&char<="Z") {
+            hasUpperCase = true
+        }else if(char>="0"&&char<="9"){
+            hasDigit = true
         }
-        while(password.length<=6 && chuThuong <= 1 && chuHoa <= 1 && chuSo <= 1){
-             password = prompt(`
-                Quy tắc đặt password:
-                1. Mật khẩu hợp lệ khi có ít nhất 6 ký tự
-                2. Chứa ít nhất 1 chữ HOA
-                3. Chứa ít nhất 1 chữ thường
-                4. Chứa ít nhất 1 chữ số`)
+    }
+
+    return hasDigit && hasLowerCase && hasUpperCase
+}
+//Set mật khẩu
+
+function setPassword(){
+    let password = prompt(`Mời thiết lập mật khẩu: `)
+
+    if(isPasswordValid(password)){
+        alert(`Đặt mật khẩu thành công! Mật khẩu: ${password}`)
+        return password
+    }else{
+        alert(`
+            Mật khẩu không hợp lệ: 
+            1. Có ít nhất 6 ký tự
+            2. Có ít nhất 1 số
+            3. Có ít nhất 1 ký tự hoa
+            2. Có ít nhất 1 ký tự viết thuòng
+            `)
+            //Gọi lại hàm set mật khẩu (đề quy)
+            setPassword()
+    }
+}
+
+//gọi hàm set pass, và gán pass vào biến
+let passwordOK = setPassword()
+
+//Viết chương trình đăng nhập
+let countLogin = 0
+
+while (true) {
+    let passwordLogin = prompt(`Mời nhập mật khẩu đăng nhập: `)
+    if (passwordLogin === passwordOK) {
+        alert(`Đăng nhập thành công, cửa đã mở`)
+        break
+    }
+    else{
+        countLogin++
+        if(countLogin<5){
+            alert(`Bạn đã nhập sai password, số lần còn lại ${countLogin}/5`)
+        }else{
+            alert(`Bạn đã nhập sai 5 lần, tài khoản của bạn sẽ bị block, liên hệ admin`)
+            break
         }
     }
 }
-//gọi hàm
-kiemTraPassword()
+
 
 

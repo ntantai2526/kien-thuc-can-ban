@@ -98,27 +98,66 @@ function setPassword(){
 }
 
 //gọi hàm set pass, và gán pass vào biến
-let passwordOK = setPassword()
+// let passwordOK = setPassword()
 
 //Viết chương trình đăng nhập
 let countLogin = 0
 
-while (true) {
-    let passwordLogin = prompt(`Mời nhập mật khẩu đăng nhập: `)
-    if (passwordLogin === passwordOK) {
-        alert(`Đăng nhập thành công, cửa đã mở`)
-        break
-    }
-    else{
-        countLogin++
-        if(countLogin<5){
-            alert(`Bạn đã nhập sai password, số lần còn lại ${countLogin}/5`)
-        }else{
-            alert(`Bạn đã nhập sai 5 lần, tài khoản của bạn sẽ bị block, liên hệ admin`)
-            break
+// while (true) {
+//     let passwordLogin = prompt(`Mời nhập mật khẩu đăng nhập: `)
+//     if (passwordLogin === passwordOK) {
+//         alert(`Đăng nhập thành công, cửa đã mở`)
+//         break
+//     }
+//     else{
+//         countLogin++
+//         if(countLogin<5){
+//             alert(`Bạn đã nhập sai password, số lần còn lại ${countLogin}/5`)
+//         }else{
+//             alert(`Bạn đã nhập sai 5 lần, tài khoản của bạn sẽ bị block, liên hệ admin`)
+//             break
+//         }
+//     }
+// }
+
+
+//30.4 Giải bài tập JavaScript 26 _ Chuyển tin nhắn sang mật mã
+//Viết chuongw trình chuyển tin nhắn sang mật mã theo bảng: 
+//const a = "abcdefghijklmnopqrstuvwxyz"
+//const b = "zxcvbnmasdfghjklqwertyuiop"
+
+function encryptMessage(message){
+    const a = "abcdefghijklmnopqrstuvwxyz"
+    const b = "zyxvbnmasdfghjklqwertyuiop"
+    let result = ""
+
+    for(let i = 0;i < message.length ; i++){
+        let char = message[i].toLowerCase() // chuyển thành chữ thường để phù hợp vói bảng mã
+
+        //Kiêm tra xem ký tự nhập vào có trong bảng mã này không
+        if(a.includes(char)){
+            //Thực hiện chuyển đổi
+            //Kiểm tra vị trí index của a trong a
+            let index = a.indexOf(char)
+            //lấy  giá trị index, đóng sang chuỗi b lấy ký tự tương ứng từ b
+            result += b[index]
         }
+        //nếu không có trong bảng mã thì giữ nguyên và cộng dồn vào result
+        else{
+            result+=char
+        }
+
+
     }
+
+    return result
 }
+
+//cho người dùng nhập dữ liệu
+let messageInput = prompt(`Nhập tin nhắn để mã hóa: `)
+let kq = encryptMessage(messageInput)
+alert(`Tin nhắn được mã hóa ${kq}`)
+
 
 
 

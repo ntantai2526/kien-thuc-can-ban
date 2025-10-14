@@ -154,9 +154,34 @@ function encryptMessage(message){
 }
 
 //cho người dùng nhập dữ liệu
-let messageInput = prompt(`Nhập tin nhắn để mã hóa: `)
-let kq = encryptMessage(messageInput)
-alert(`Tin nhắn được mã hóa ${kq}`)
+// let messageInput = prompt(`Nhập tin nhắn để mã hóa: `)
+// let kq = encryptMessage(messageInput)
+// alert(`Tin nhắn được mã hóa ${kq}`)
+
+//30.5 Giải bài tập JavaScript 27 _ Đếm từ tôi trong chuỗi - Bài tập JavaScript có giải chi tiết
+// const a = "tôi chăm học tôi chịu khó tôi đẹp zai";
+// Đếm từ tôi trong string a trên ? 
+
+const a = "tôi chăm học tôi chịu khó tôi đẹp zai"
+const targetWord = "tôi"
+let count = 0
+
+for(let i = 0; i < a.length; i++){
+   if(a.slice(i, i + targetWord.length) === targetWord){
+    count++
+   } 
+}
+alert(`Số lần của từ ${targetWord} xuất hiện trong chuỗi là ${count}`)
+
+
+
+
+
+
+
+
+// Viết chương trình tách số và chữ từ chuỗi nhập vào thành 2 chuỗi :  
+// ví dụ nhập vào : abc123 sẽ tách và in ra thành 2 chuỗi abc và 123
 
 
 

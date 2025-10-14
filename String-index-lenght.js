@@ -33,8 +33,9 @@ console.log(s2.length)
 //beginIndex: vị trí đầu cắt chuỗi
 //endIndex: (tùy chọn) vi trí sát Index, khôn bao gồm Index
 //endIndex: nếu không nhập sẽ mặc định ngầm là cắt đế cuối chuỗi
-let s4 = `23456789`
-let s5 = s4.slice(2, 5) // cắt từ vị trí thứ 2(4) đế vị trí 5(7)
+let s4 = `234567897`
+let s5 = s4.slice(2, 5) // cắt từ vị trí thứ 2(4) đế vị trí sát(5-1) 5(7)
+let s5 = s4.slice(2, 9) // cắt từ vị trí thứ 2(4) đế vị trí 9-1 = 8(7)
 console.log(s5)
 
 // let s6 = prompt(`Mời nhập vào chuỗi: `)

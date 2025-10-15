@@ -35,7 +35,40 @@ let currentTimeStamp = currentDate.getTime()
 console.log(currentTimeStamp)
 
 
+//31.2 Xử lý ngày tháng trong JavaScript, Date Set Methods , định dạng và hiển thị ngày tháng trong JS
+// Đặt ngày tháng theo ý muốn
+//Cach 1: new Date(year, monthIndex, day, hours, minutes, seconds, millisecond)
+let myDate = new Date(2025, 9, 16)
+console.log(myDate)
+console.log(myDate.toLocaleDateString())
+//Cách 2: new Date(dateString)
+let myDate1 = new Date("2025-10-16T06:00:00")
+console.log(myDate1)
+console.log(myDate1.toLocaleDateString())
 
+//Cách 3 sử dụng setFullYear; setMonth, setDate
+let myDate2 = new Date() 
+console.log(myDate2)
+myDate2.setFullYear(2023)
+myDate2.setMonth(9)
+myDate2.setDate(9)
+console.log(myDate2)
 
+//4.Xuất ngày tháng năm: 
+//Xuất dùng phương thức toLocaleDateString()
+console.log(myDate2.toLocaleDateString())
+
+//Xuất ngày tháng năm theo định dạng mong muốn(tự code)
+console.log(`
+    Ngày ${myDate2.getDate()}/ Tháng ${myDate2.getMonth()+1}/ $Năm {myDate2.getFullYear()}
+    `)
+
+//Thêm số 0 để xuất ra ngày tháng dạng 01, 02 ...
+
+let prefixDate = myDate2.getDate() < 10 ? "0" : ""
+let prefixMonth = myDate2.getDate() < 9 ? "0" : ""
+console.log(`
+    Ngày ${prefixDate}${myDate2.getDate()}/ Tháng ${prefixMonth}${myDate2.getMonth()+1}/ $Năm {myDate2.getFullYear()}
+    `)
 
 

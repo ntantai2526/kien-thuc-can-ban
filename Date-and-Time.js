@@ -71,4 +71,44 @@ console.log(`
     Ngày ${prefixDate}${myDate2.getDate()}/ Tháng ${prefixMonth}${myDate2.getMonth()+1}/ $Năm {myDate2.getFullYear()}
     `)
 
+//31.3 setTimeout trong JavaScript _ Video hướng dẫn đầy đủ và chi tiết tại khoá học JavaScript pro
+// setTimeOut được sử dụng để thực hiện hàm sau một khoản time
+
+//setTimeout(functon, milliseconds, param1, param2,...)
+//function: Hàm mà chúng ta muốn thực hiện sau 1 khoảng time
+//delay: thời gian chờ trước khi được gọi, được đo bằng milli giây
+
+//1. ôn lại cách khai báo hàm
+///a. arrow function
+
+let helloArrow = () =>{
+    console.log("Hello")
+} 
+
+setTimeout(helloArrow, 3000)
+
+// b. function declaration
+function xinChao(){
+    console.log(`Hello in function declaration`)
+}
+setTimeout(xinChao, 4000)
+
+//c. function Expr
+let helloExpress = function(){
+    console.log(`Hello in function expresstion`)
+}
+
+setTimeout(helloExpress, 5000)
+
+//
+let helloArrow1 = (yourName) =>{
+    console.log(`Hello, ${yourName}`)
+}
+
+let timeOut = setTimeout(helloArrow1, 3000, "Giang")
+clearTimeout(timeOut)
+
+
+
+
 

@@ -108,6 +108,76 @@ let helloArrow1 = (yourName) =>{
 let timeOut = setTimeout(helloArrow1, 3000, "Giang")
 clearTimeout(timeOut)
 
+//31.4 Javascript setInterval Explained _ Hiểu rõ setInterval trong JavaScript với ví dụ thực tế
+//setlnterval thực hiện một hiện 1 function lặp đi lặp lại
+//trong khoản thời gian cố định
+//setInterval(function, milliseconds, param1, param2, ...)
+//cách  sử dụng giống với setTimeout()
+
+function showNotification(){
+    console.log(`Bạn có xxx tin nhắn chưa đọc`);
+}
+// setInterval(showNotification,2000)
+
+//Ví dụ 2:
+function updateTime(){
+    let currentTime = new Date()
+    console.log(currentTime)
+}
+// setInterval(updateTime, 1000)
+
+ let counter = 0;
+//1. function declaration
+//  function count(){
+//     console.log(counter++)
+//  }
+
+//2. function expresstion
+// let count = function (){
+//     console.log(counter++)
+// }
+
+//3. Arrow fuction
+// let count = () =>{
+//     console.log(counter++)
+// }
+// setInterval(count, 1000)
+
+//4. Hủy lặp
+// let count = () =>{
+//     console.log(counter++)
+//     if(counter === 5){
+//         clearInterval(stopInterval)
+//     }
+// }
+
+// //step 1: gán viến để giá trị trả về
+// let stopInterval = setInterval(count, 1000)
+
+
+// BTTH
+//BT 29: viết chương trình nhập vào năm sinh kiểm in ra số tuổi
+//điều kiện dữ liệu năm sinhh phải là số nguyên và > 0
+
+while(true){
+    let year = Number(prompt(`Nhập vào năm sinh: `))
+
+    while(year < 0 || !Number.isInteger(year)){
+        year = Number(prompt(`Năm sinh không hợp lệ. Năm sinh phải là số nguyên và > 0: `))
+    }
+    let old = examOld(year)
+    console.log("tuổi của bạn là: "+old)
+    break
+}
+
+function examOld(year){
+    let currentDate = new Date()
+    nowYear = currentDate.getFullYear()
+    let currentOld = nowYear - year;
+    return currentOld 
+}
+
+
 
 
 

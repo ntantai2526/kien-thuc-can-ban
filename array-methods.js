@@ -79,7 +79,10 @@ arr13 = [1,2,3,4,5]
 arr13.splice(2,0,6,7,8,9)
 console.log(arr13)
 
-
+//13.5 chuyển đổi chuỗi thànhg mảng
+let myName = "jacky"
+let char = [...myName]//có thể hiểu ... là for loop để lấy từng phần tử
+console.log(char)
 
 
 

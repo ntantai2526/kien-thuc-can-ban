@@ -57,8 +57,27 @@ let arr9 = [1,2,3,4,5,"năm"]
 let isPresent = arr9.includes(10)
 console.log(isPresent)
 
+//32.4 Hiểu Rõ Sức Mạnh của splice() - Chinh Phục Mảng JavaScript
+//12.1 splice công cụ mạnh mẽ cho việc thay đổi cấu trúc mảng
+/*
+array.splice(start, deleteCount, Item1, Item2,...)
+start: chỉ định vị trí bắt đầu thay đổi mảng
+deleteCount: số phần từ cần xóa từ vị trí bắt đầu
+Item1, Item2: các phần tử mới muốn thêm vào mảng từ vị trí start
+*/
+let arr11 = [1,2,3,4,5]
+// arr11.splice(2,2) //Xóa từ vị trí 2. xóa đi 2 phần tử
+arr11.splice(-2,2) // xóa từ vị trí -2, xóa đi 2 phần tử
+console.log(arr11)
 
-
+//12.2 thay thế các phẩn tử trong mảng
+arr12 = [1,2,3,4,5]
+arr12.splice(2,1,6) // xóa từ vị trí 2 đi 1 phần tử và thêm vào 6 từ vị trí 2
+console.log(arr12)
+//12.3 Thêm phần từ vào mảng
+arr13 = [1,2,3,4,5]
+arr13.splice(2,0,6,7,8,9)
+console.log(arr13)
 
 
 

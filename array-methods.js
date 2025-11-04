@@ -84,6 +84,48 @@ let myName = "jacky"
 let char = [...myName]//có thể hiểu ... là for loop để lấy từng phần tử
 console.log(char)
 
+//32.6 Phương Thức sort() trong JavaScript - ES6 - Sắp Xếp Mảng trong JavaScript một Cách Hiệu Quả
+//14. Phương thức sort()
+// 14.1: khi không truyền conparefunction: so sánh lân lượt ký tự đầu, đến
+// các ký tự phía sau (nếu các ký tự sẽ dừng so sánh -> Sắp xếp theo thứ tự
+// tăng dần dựa theo thứ tự trong bảng mã UNICODE)
+
+let M1=["c", "a", "b"]
+console.log("b".charCodeAt())
+//duyêt mảng bằng for...of
+for(let element of M1){
+    console.log(element)
+    console.log(`${element} có mã UNICODE là : ${element.charCodeAt()}`)
+}
+
+let sortedM1 = M1.sort()
+console.log(sortedM1)
+
+//TH2: Phần tử có nhiều ký tự: só sánh như TH1
+//Nếu có ký tự giống nhau sẽ so sánh các ký tự sau
+let M2 = ["baa", "a", "c"]
+let sortedM2 = M2.sort()
+console.log(sortedM2)
+
+//Ví dụ với ký tự số(vì xếp theo UNICODE nên sẽ có kq không mong muốn)
+let M3 = [10000, 1, 9, 3]
+let sortedM3 = M3.sort()
+console.log(sortedM3)
+
+//14.2 só sánh(compare function)
+/*
+Hàm so sánh (Compare Function)
+Nếu compareFunction(a,b) trả về một giá trị < 0, a sẽ được đặt trước b.
+nếu compareFunction(a,b) trả về 0, thứ tự a và b không đổi
+nếu compareFunction(a,b) trả về giá trị > 0, b sẽ được đặt trước a
+*/
+let M4 = [9,3,4,6,2]
+//trước khi sắp xếp
+console.log(M4)
+//sx tăng dần
+let sortedM4 = M4.sort((a,b) => a - b)
+console.log(sortedM4)
+
 
 
 

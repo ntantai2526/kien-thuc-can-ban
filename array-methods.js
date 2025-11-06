@@ -167,6 +167,26 @@ let sum3 = M5.reduce(
 )
 console.log(sum3)
 
+//32.8 JavaScript Filter() Method - Sử dụng filter() để làm việc với dữ liệu mảng trong JavaScript
+/*
+Syntax: array.filter(function)
+
+function(currrentValue, [currentIndex], [array])
+Hàm được gọi với những đối số sau:
+currentValue: giá trị hiện tại đang xử lý trong mảng
+currnetIndex: (tùy chọn) chỉ sôs của phần tử đang xử lý
+array: (tùy chọn) mảng đang được duyệt
+*/
+let numbers = [1,2,3,4,5]
+// tìm những phần tử số  chẵn trong mảng
+let evenNumbers = numbers.filter(
+    //function
+    (value, index, array) => value%2===0
+)
+console.log(evenNumbers)
+
+
+
 
 
 

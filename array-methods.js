@@ -126,6 +126,52 @@ console.log(M4)
 let sortedM4 = M4.sort((a,b) => a - b)
 console.log(sortedM4)
 
+//32.7 Phương Thức reduce() trong JavaScript - Hướng Dẫn Chi Tiết với Ví Dụ Thực Tế
+//Dựa trên một hàm xủ lý -> tính toán và trả về một giá trị duy nhất
+/*
+Syntax: reduce(function, [initialValue])
+1. function: một hàm để thực thi cho từng phần tử trong mảng
+2. initialValue: giá trị khởi tạo
+*/
+
+//Bài toán khi không dùng reduce()
+let M5 = [6,2,3]
+//thực hiện tính tổng các phần tử trong mảng
+// 1.giá  trị khởi toạn ban đầu
+let sum = 0
+for(let element of M5){
+    sum+=element
+}
+console.log(`Tổng các phần tử trông mảng là: ${sum}`)
+
+//Khi dung reduce()
+/*
+accumlator: giá trị tích lũy, được cập nhẩ sau mỗi lần gọi hàm
+currentValue: giá trị hiện tại đang xử lý trong mảng
+currentIndex: (tùy chọn) chỉ số của phần tử đang xử lý
+array:(tùy chọn) mảng đang được reduce
+*/
+
+let sum2 = M5.reduce(
+    //tham số function
+    (accumlator, currentValue, currentIndex, array)=>{
+        return accumlator + currentValue
+    }, 0 //giá trị inittialValue có thể hiểu là sum = 0 ở trên
+)
+console.log(`tổng giá trị trong mảng (reduce): ${sum2}`)
+
+//rút gọn lại
+let sum3 = M5.reduce(
+    (accumlator, currentValue) => accumlator+currentValue,
+    0
+)
+console.log(sum3)
+
+
+
+
+
+
 
 
 
